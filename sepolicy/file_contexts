@@ -45,13 +45,16 @@
 /persist-lg/sensors(/.*)?                           u:object_r:sensors_persist_file:s0
 /sns(/.*)?                                          u:object_r:sensors_persist_file:s0
 
+# Thermal
+/system/vendor/bin/thermal-engine                   u:object_r:thermal-engine_exec:s0
+
 # Time
 /data/system/time(/.*)?                             u:object_r:time_data_file:s0
 
 # Vibrator
 /sys/devices/virtual/input/lge_touch(/.*)?          u:object_r:sysfs_touchpanel:s0
 /sys/devices/platform/tspdrv/nforce_timed           u:object_r:sysfs_vibrator:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.1-service\.g2 u:object_r:hal_vibrator_default_exec:s0
+/system/vendor/bin/hw/android\.hardware\.vibrator@1\.0-service\.g2 u:object_r:hal_vibrator_default_exec:s0
 
 # Wifi
 /sys/module/bcmdhd/parameters/firmware_path u:object_r:sysfs_wlan_fwpath:s0
