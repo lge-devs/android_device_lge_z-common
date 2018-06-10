@@ -127,9 +127,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.ar.hal=e \
     persist.sys.ssr.enable_debug=0
 
-# Storage
+# Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=true
+    ro.lineage.build.vendor_security_patch=2015-12-01
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
