@@ -17,7 +17,6 @@
 ifneq ($(filter d958 f340l f340k f340s,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
-LOCAL_STATIC_LIBRARIES := libbase
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
