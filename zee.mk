@@ -156,6 +156,7 @@ PRODUCT_PACKAGES += \
     init.z.power.rc \
     init.z.usb.rc \
     init.recovery.z.rc \
+    init.recovery.z.power.rc \
     set_baseband.sh \
     ueventd.z.rc
 
