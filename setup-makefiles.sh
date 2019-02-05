@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE_COMMON=g2-common
+DEVICE_COMMON=z-common
 VENDOR=lge
 
 INITIAL_COPYRIGHT_YEAR=2013
@@ -40,7 +40,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
 
 # Copyright headers and common guards
-write_headers "g2 d800 d801 d802 d803 f320 l01f ls980 vs980"
+write_headers "z d800 d801 d802 d803 f320 l01f ls980 vs980"
 
 # The common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt

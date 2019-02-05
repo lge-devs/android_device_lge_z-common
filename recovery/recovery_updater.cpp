@@ -184,6 +184,6 @@ Value * VerifyTrustZoneFn(const char *name, State *state, int argc, Expr *argv[]
     return StringValue(strdup(ret ? "1" : "0"));
 }
 
-void Register_librecovery_updater_g2() {
-    RegisterFunction("g2.verify_trustzone", VerifyTrustZoneFn);
+void Register_librecovery_updater_z() {
+    RegisterFunction("z.verify_trustzone", VerifyTrustZoneFn);
 }

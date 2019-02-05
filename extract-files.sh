@@ -18,7 +18,7 @@
 
 set -e
 
-DEVICE_COMMON=g2-common
+DEVICE_COMMON=z-common
 VENDOR=lge
 
 INITIAL_COPYRIGHT_YEAR=2013

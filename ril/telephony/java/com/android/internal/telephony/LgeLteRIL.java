@@ -24,7 +24,7 @@ import android.os.Message;
 import android.os.Parcel;
 
 /**
- * Custom Qualcomm RIL for G2
+ * Custom Qualcomm RIL for Z
  *
  * {@hide}
  */

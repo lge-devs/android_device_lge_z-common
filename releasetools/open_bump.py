@@ -46,12 +46,12 @@ lg_dec_magic = "696e6877612e77651000000047116667"
 
 
 def generate_signature(image_hash):
-    # the iv and key were extracted from the lg g2 aboot.img. I can explain how to find it on request.
+    # the iv and key were extracted from the lg z aboot.img. I can explain how to find it on request.
     iv = lg_iv
     key = binascii.unhexlify(lg_key)
     # this "magic" number was found after decrypting the bumped images
     # Without codefire, this would not have been possible as I can find no reference in
-    # the images of the g2 or the g3
+    # the images of the z or the g3
     magic = binascii.unhexlify(lg_magic)
     image_hash = binascii.unhexlify(image_hash)  # insert your hash here
     # the structure of the signature in bump starts with a magic number, then seemingly random

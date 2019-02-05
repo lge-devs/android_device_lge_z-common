@@ -3,28 +3,28 @@ LOCAL_PATH := $(call my-dir)
 ## THIS IS A DEFAULT: YOU SHOULD OVERRIDE IT FROM THE DEVICE-SPECIFIC
 ## BoardConfig. Check the kernel's arch/arm/boot/dts/ path for possible
 ## values.
-G2_DTS_TARGET ?= msm8974-g2-open_com
+Z_DTS_TARGET ?= msm8974-z-open_com
 
 
-## Don't change anything under here. The variables are named G2_whatever
+## Don't change anything under here. The variables are named Z_whatever
 ## on purpose, to avoid conflicts with similarly named variables at other
 ## parts of the build environment
 
 ## Imported from the original makefile...
 KERNEL_CONFIG := $(KERNEL_OUT)/.config
-G2_DTS_NAMES := msm8974
+Z_DTS_NAMES := msm8974
 
-G2_DTS_FILES = $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/dts/lge/msm8974-g2/$(G2_DTS_TARGET)/*.dts)
-G2_DTS_FILE = $(lastword $(subst /, ,$(1)))
-DTB_FILE = $(addprefix $(KERNEL_OUT)/arch/arm/boot/,$(patsubst %.dts,%.dtb,$(call G2_DTS_FILE,$(1))))
-ZIMG_FILE = $(addprefix $(KERNEL_OUT)/arch/arm/boot/,$(patsubst %.dts,%-zImage,$(call G2_DTS_FILE,$(1))))
+Z_DTS_FILES = $(wildcard $(TOP)/$(TARGET_KERNEL_SOURCE)/arch/arm/boot/dts/lge/msm8974-z/$(Z_DTS_TARGET)/*.dts)
+Z_DTS_FILE = $(lastword $(subst /, ,$(1)))
+DTB_FILE = $(addprefix $(KERNEL_OUT)/arch/arm/boot/,$(patsubst %.dts,%.dtb,$(call Z_DTS_FILE,$(1))))
+ZIMG_FILE = $(addprefix $(KERNEL_OUT)/arch/arm/boot/,$(patsubst %.dts,%-zImage,$(call Z_DTS_FILE,$(1))))
 KERNEL_ZIMG = $(KERNEL_OUT)/arch/arm/boot/zImage
 DTC = $(KERNEL_OUT)/scripts/dtc/dtc
 
-define append-g2-dtb
+define append-z-dtb
 mkdir -p $(KERNEL_OUT)/arch/arm/boot;\
-$(foreach G2_DTS_NAME, $(G2_DTS_NAMES), \
-   $(foreach d, $(G2_DTS_FILES), \
+$(foreach Z_DTS_NAME, $(Z_DTS_NAMES), \
+   $(foreach d, $(Z_DTS_FILES), \
       $(DTC) -p 1024 -O dtb -o $(call DTB_FILE,$(d)) $(d); \
       cat $(KERNEL_ZIMG) $(call DTB_FILE,$(d)) > $(call ZIMG_FILE,$(d));))
 endef
@@ -37,7 +37,7 @@ INSTALLED_DTIMAGE_TARGET := $(PRODUCT_OUT)/dt.img
 
 $(INSTALLED_DTIMAGE_TARGET): $(DTBTOOL) $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr $(INSTALLED_KERNEL_TARGET)
 	@echo -e ${CL_CYN}"Start DT image: $@"${CL_RST}
-	$(call append-g2-dtb)
+	$(call append-z-dtb)
 	$(call pretty,"Target dt image: $(INSTALLED_DTIMAGE_TARGET)")
 	$(hide) $(DTBTOOL) -o $(INSTALLED_DTIMAGE_TARGET) -s $(BOARD_KERNEL_PAGESIZE) -p $(KERNEL_OUT)/scripts/dtc/ $(KERNEL_OUT)/arch/arm/boot/
 	@echo -e ${CL_CYN}"Made DT image: $@"${CL_RST}

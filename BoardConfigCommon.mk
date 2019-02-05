@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-TARGET_SPECIFIC_HEADER_PATH := device/lge/g2-common/include
+TARGET_SPECIFIC_HEADER_PATH := device/lge/z-common/include
 
 # Architecture
 TARGET_ARCH := arm
@@ -32,9 +32,9 @@ TARGET_NO_RADIOIMAGE := true
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := device/lge/g2-common/releasetools/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/lge/z-common/releasetools/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=g2
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=z
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x05000000 --tags_offset 0x00000100
@@ -46,8 +46,8 @@ BOARD_USES_ALSA_AUDIO := true
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/g2-common/bluetooth
-BOARD_CUSTOM_BT_CONFIG := device/lge/g2-common/bluetooth/vnd_g2.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/z-common/bluetooth
+BOARD_CUSTOM_BT_CONFIG := device/lge/z-common/bluetooth/vnd_z.txt
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
@@ -63,7 +63,7 @@ BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/lge/g2-common/cmhw/
+BOARD_HARDWARE_CLASS := device/lge/z-common/cmhw/
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/touch_gesture"
 
 # Display
@@ -104,17 +104,17 @@ BOARD_USES_QC_TIME_SERVICES := true
 BOARD_GLOBAL_CFLAGS := -DBOARD_RECOVERY_BLDRMSG_OFFSET=128
 BOARD_NO_SECURE_DISCARD := true
 TARGET_RECOVERY_DENSITY := xhdpi
-TARGET_RECOVERY_FSTAB := device/lge/g2-common/rootdir/etc/fstab.g2
+TARGET_RECOVERY_FSTAB := device/lge/z-common/rootdir/etc/fstab.z
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_g2
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_z
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/g2-common/releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/z-common/releasetools
 
 # RIL
-BOARD_RIL_CLASS += ../../../device/lge/g2-common/ril
+BOARD_RIL_CLASS += ../../../device/lge/z-common/ril
 
 # SDClang
 TARGET_USE_SDCLANG := true
@@ -123,7 +123,7 @@ TARGET_USE_SDCLANG := true
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    device/lge/g2-common/sepolicy
+    device/lge/z-common/sepolicy
 
 # Wi-Fi
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
