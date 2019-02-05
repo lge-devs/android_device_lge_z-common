@@ -79,16 +79,16 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 5000000
 VSYNC_EVENT_PHASE_OFFSET_NS := 7500000
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := device/lge/g2-common/config.fs
+TARGET_FS_CONFIG_GEN := device/lge/z-common/config.fs
 
 # HIDL
-DEVICE_MANIFEST_FILE := device/lge/g2-common/configs/manifest.xml
+DEVICE_MANIFEST_FILE := device/lge/z-common/configs/manifest.xml
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
 # Offmode Charging
-BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/lge/g2-common/charger/images
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := device/lge/z-common/charger/images
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072

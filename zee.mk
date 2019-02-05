@@ -177,7 +177,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.g2
+    android.hardware.light@2.0-service.z
 
 # Offmode Charging
 PRODUCT_PACKAGES += \
@@ -259,7 +259,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.1-service.g2
+    android.hardware.vibrator@1.1-service.z
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
