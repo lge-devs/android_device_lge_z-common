@@ -36,18 +36,19 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Default to sanitizing the vendor folder before extraction
-CLEAN_VENDOR=true
+# default to not sanitizing the vendor folder before extraction
+clean_vendor=false
 
 while [ "$1" != "" ]; do
     case $1 in
-        -n | --no-cleanup )     CLEAN_VENDOR=false
+        -p | --path )           shift
+                                SRC=$1
                                 ;;
         -s | --section )        shift
                                 SECTION=$1
-                                CLEAN_VENDOR=false
+                                clean_vendor=false
                                 ;;
-        * )                     SRC=$1
+        -c | --clean-vendor )   clean_vendor=true
                                 ;;
     esac
     shift
