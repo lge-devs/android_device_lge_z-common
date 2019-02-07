@@ -40,7 +40,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
 
 # Copyright headers and common guards
-write_headers "d958 f340l f340k f340s"
+write_headers "d950 d955 d958 d959 f340l f340k f340s ls995"
 
 # The common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
